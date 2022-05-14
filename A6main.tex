@@ -1,0 +1,173 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\RequirePackage{amsmath}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+ \usepackage{gensymb}
+ \usepackage{graphicx}
+ \usepackage{polynom}
+\usepackage{amssymb}
+\usepackage{amsthm}
+ \usepackage{stfloats}
+ \usepackage{bm}
+\usepackage{enumitem}
+ \usepackage{mathtools}
+ \usepackage{tikz}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+                                            %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+    \usepackage{amsmath}
+
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+                                %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\begin{document}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left\{#1\right\}}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\question}{\noindent \textbf{Question: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
+
+\vspace{3cm}
+       
+\title{ASSIGNMENT 6 : CBSE PROBABILITY CLASS-12} 
+\author{AI21BTECH11016} 
+\date{May 2022}     
+
+
+\maketitle
+
+\newpage
+
+\bigskip
+
+
+\textbf{EXAMPLE - 25}\\
+
+\question \\
+Find the probability distribution of number of doublets in three throws of
+a pair of dice.\\
+
+\solution \\
+Let X=\cbrak{0,1,2,3} be a random variable representing the number of doublets.\\\\
+
+\begin{table}[ht!]
+    \centering
+    \input{tables/table6(1).tex}
+    \caption{}
+    \label{table:table1}
+\end{table}
+
+\text For a single throw the possible doublets are :
+\begin{center}
+\text (1,1) , (2,2), (3,3), (4,4), (5,5), (6,6)
+\end{center}
+$\Rightarrow$ Probability of getting a doublet = $\frac{1}{6}$ \\\\
+\text From the binomial distribution :\\
+
+\begin{enumerate}[label=(\roman*)]
+\item {
+\begin{align}
+\pr{X = 0} & = {3 \choose 0} \times \sbrak{\frac{1}{6}}^0 \times \sbrak{\frac{5}{6}}^3\\ & = \frac{125}{216}
+\end{align}}
+
+\item {
+\begin{align}
+\pr{X = 1} & = {3 \choose 1} \times \sbrak{\frac{1}{6}}^1 \times \sbrak{\frac{5}{6}}^2\\ & = 3 \times \frac{25}{216}\\ & = \frac{75}{216}
+\end{align}}
+
+\item{
+\begin{align}
+\pr{X = 2} & = {3 \choose 2} \times \sbrak{\frac{1}{6}}^2 \times \sbrak{\frac{5}{6}}^1\\ & = 3 \times \frac{5}{216}\\ & = \frac{15}{216}
+\end{align}}
+
+\item{ 
+\begin{align}
+\pr{X = 3} & = {3 \choose 3} \times \sbrak{\frac{1}{6}}^3 \times \sbrak{\frac{5}{6}}^0\\ & = \frac{1}{216}
+\end{align}}
+
+\end{enumerate}
+
+$\Rightarrow$ The Probability distribution of number of doublets in three throws of
+a pair of dice is :
+
+\begin{table}[ht!]
+    \centering
+    \input{tables/table6(2).tex}
+    \caption{}
+    \label{table:table2}
+\end{table}
+
+\end{document}
