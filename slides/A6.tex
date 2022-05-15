@@ -1,0 +1,129 @@
+\documentclass{beamer}
+
+\usepackage{xspace}
+
+ \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}   
+    
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}                                      
+
+\setbeamertemplate{caption}[numbered]{}
+    
+\providecommand{\pr}[1]{\ensuremath{\Pr\left\{#1\right\}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{ASSIGNMENT 6 : CBSE PROBABILITY CLASS- 12  EXAMPLE - 25} 
+\author{AI21BTECH11016}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+% Outline frame
+\begin{frame}{Question}
+\begin{block}{}
+Find the probability distribution of number of doublets in three throws of
+a pair of dice.
+\end{block}
+\end{frame}
+
+\section{Declaration of Random Variables}
+\begin{frame}{Solution}
+Let X=\cbrak{0,1,2,3} be a random variable representing the number of doublets.\\
+
+\begin{table}[ht!]
+    \centering
+    \input{tables/table6(1).tex}
+    \caption{Random Variables}
+    \label{Tab:Table1}
+\end{table}
+\end{frame}
+
+\section{Finding Probabilities from Binomial Distribution}
+
+\begin{frame}
+\text For a single throw the possible doublets are :
+\begin{center}
+\text (1,1) , (2,2), (3,3), (4,4), (5,5), (6,6)\\
+\end{center}
+\item $\Rightarrow$ Probability of getting a doublet = $\frac{1}{6}$\\
+Let \textbf{p} be the probability of getting a doublet in one throw and Let \textbf{q} be the probability of not getting a doublet in one throw.\\ 
+\centering
+\begin{align}
+\Rightarrow p & = \frac{1}{6}\\
+q & = \frac{5}{6}
+\end{align}
+\end{frame}
+
+\begin{frame}
+\textbf{From the binomial distribution :}\\
+\begin{enumerate}
+\item {
+\begin{align}
+\pr{X = 0} & = {3 \choose 0} \times p^0 \times q^3\\ & = 1 \times \sbrak{\frac{1}{6}}^0 \times \sbrak{\frac{5}{6}}^3\\ & = \frac{125}{216}
+\end{align}}
+\item {
+\begin{align}
+\pr{X = 1} & = {3 \choose 1} \times p^1 \times q^2\\ & = 3 \times \sbrak{\frac{1}{6}}^1 \times \sbrak{\frac{5}{6}}^2\\ & = 3 \times \frac{25}{216}\\ & = \frac{75}{216}
+\end{align}}
+\seti
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{enumerate}
+\conti
+\item{
+\begin{align}
+\pr{X = 2} & = {3 \choose 2} \times p^2 \times q^1\\ & = {3 \choose 2} \times \sbrak{\frac{1}{6}}^2 \times \sbrak{\frac{5}{6}}^1\\ & = 3 \times \frac{5}{216}\\ & = \frac{15}{216}
+\end{align}}
+\item{ 
+\begin{align}
+\pr{X = 3} & = {3 \choose 3} \times p^3 \times q^0\\ & = {3 \choose 3} \times \sbrak{\frac{1}{6}}^3 \times \sbrak{\frac{5}{6}}^0\\ & = \frac{1}{216}
+\end{align}}
+\end{enumerae}
+\end{frame}
+
+
+\section{Probability Distribution Table}
+
+\begin{frame}{Probability Distribution Table}
+$\Rightarrow$ The Probability distribution of number of doublets in three throws of
+a pair of dice is :
+    \begin{block}{}
+     \begin{table}[ht!]
+    \centering
+    \input{tables/table6(2).tex}
+    \caption{Probability Distribution}
+    \label{Tab:2}
+\end{table}   
+    \end{block}
+\end{frame} 
+
+
+\end{document}
